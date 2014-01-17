@@ -3,6 +3,7 @@ class PeopleController < ApplicationController
 
   def index
     @people = People.all
+    @users = User.all
   end
 
   def new
@@ -11,7 +12,11 @@ class PeopleController < ApplicationController
   def create
     @person = People.new(person_params)
     @person.save
-    redirect_to people_path, notice: "Person added sucessfully."
+    @user = User.invite!({:email => @person.email}, current_user)
+    @person.user_id = @user.id
+    @person.status = 'Invited'
+    @person.save
+    redirect_to people_path, notice: "Person invited!"
   end
 
   def edit
@@ -41,11 +46,11 @@ private
   end
 
   def person_params
-    params.require(:person).permit(:name,:phone, :email, :position, :id)
+    params.require(:person).permit(:name,:phone, :email, :position, :id, :user_id, :status)
   end
 
   def people_params
-    params.require(:people).permit(:name,:phone, :email, :position, :id)
+    params.require(:people).permit(:name,:phone, :email, :position, :id, :user_id, :status)
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116222611) do
+ActiveRecord::Schema.define(version: 20140117220725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20140116222611) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "position"
+    t.integer  "user_id"
+    t.string   "status"
   end
 
   create_table "roles", force: true do |t|
@@ -53,9 +55,23 @@ ActiveRecord::Schema.define(version: 20140116222611) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
+  create_table "shortened_urls", force: true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type", limit: 20
+    t.string   "url",                               null: false
+    t.string   "unique_key", limit: 10,             null: false
+    t.integer  "use_count",             default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shortened_urls", ["owner_id", "owner_type"], name: "index_shortened_urls_on_owner_id_and_owner_type", using: :btree
+  add_index "shortened_urls", ["unique_key"], name: "index_shortened_urls_on_unique_key", unique: true, using: :btree
+  add_index "shortened_urls", ["url"], name: "index_shortened_urls_on_url", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -67,9 +83,18 @@ ActiveRecord::Schema.define(version: 20140116222611) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
+  add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "users_roles", id: false, force: true do |t|

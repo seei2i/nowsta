@@ -17,6 +17,8 @@ gem 'rolify'
 gem 'sendgrid'
 gem 'simple_form'
 gem 'thin'
+gem 'devise_invitable'
+gem 'shortener'
 # gem 'protected_attributes'
 group :development do
   gem 'better_errors'

@@ -37,7 +37,7 @@ main {
   background-color: #eee;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  padding-top: 51px; // accommodate the navbar
   }
 section {
   @extend .row;
@@ -80,5 +80,11 @@ html, body, main {
 }
 
 main {
-  margin-top: 0px;
+  padding-top: 200px;
+  margin-top: -201px;
+}
+
+body {
+  margin-top: -51px;
+  padding-top: 51px;
 }
