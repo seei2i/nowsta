@@ -74,3 +74,11 @@ section {
 #error_explanation h2 {
   font-size: 16px;
 }
+
+html, body, main {
+  height: 100%;
+}
+
+main {
+  margin-top: 0px;
+}

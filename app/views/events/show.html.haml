@@ -1,0 +1,8 @@
+.container
+  .col-xs-12
+    %h3= @event.name
+    %p= @event.description
+    %p= @event.date
+    %p= @event.time
+    %p= @event.location
+    %p= link_to 'Back', events_path 

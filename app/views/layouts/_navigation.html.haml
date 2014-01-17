@@ -7,7 +7,27 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
+      = link_to 'NOWSTA', root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
-      %ul.nav.navbar-nav
+      %ul.nav.navbar-nav.pull-right
         = render 'layouts/navigation_links'
+%nav.navbar.navbar-magic
+  .container
+    %ul.nav.navbar-nav.pull-left
+      %li
+        %a.glyphicon.glyphicon-search{:href => '#'}
+          / %span.glyphicon.glyphicon-user
+    / %form.navbar-form.navbar-left{:role => "search"}
+    /   .form-group
+    /     %input.form-control{:placeholder => "Search", :type => "text"}
+    /   %button.btn.btn-default{:type => "submit"} Submit
+    - if current_page?(people_path)
+      %ul.nav.navbar-nav.pull-right
+        %li
+          %a.glyphicon.glyphicon-user{:href => new_person_path}
+            %span +
+    - if current_page?(events_path)
+      %ul.nav.navbar-nav.pull-right
+        %li
+          %a.glyphicon.glyphicon-star{:href => new_event_path}
+            %span +

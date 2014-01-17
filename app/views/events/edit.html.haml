@@ -1,0 +1,19 @@
+.container
+  .col-xs-12
+    = simple_form_for(@event, :as => @event, :url => event_path(@event), :html => { :method => :put, :class => 'form-vertical' }) do |f|
+      %br
+      = f.input :name, :label => 'Event Name', :placeholder => 'Event Name', :autofocus => true
+      %br
+      = f.input :description,  :label => 'Event Description', :placeholder => 'Event Description', :as => :text, :input_html => { :rows => 20 , :class => "col-xs-12"}
+      %br
+      = f.input :date, :label => 'Event Date', :placeholder => 'Sat Jan 25'
+      %br
+      = f.input :time, :label => 'Event Time', :placeholder => '8PM-2AM', :autofocus => true
+      %br
+      = f.input :location, :label => 'Event Location', :placeholder => '123 Fake St. New York, NY', :autofocus => true
+      %br
+      = f.button :submit, 'Update Event', :class => 'btn-primary'
+    = link_to "Remove Event", event_path(@event), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => "pull-right"
+    %br
+    %br
+    %br

@@ -1,0 +1,24 @@
+.container
+  .col-xs-12
+    %table.table.table-condensed
+      %thead
+        %tr
+          %th Name
+          %th Phone
+          %th Email
+          %th Status
+          %th Change/Update 
+          %th Position
+          %th Delete
+      %tbody
+        - if @people == nil
+        - else
+          - @people.each do |person|
+            %tr
+              %td= link_to person.name, person
+              %td= person.phone
+              %td= person.email
+              %td STATUS
+              %td= link_to 'Edit', edit_person_path(person)
+              %td= person.position
+              %td= link_to "Remove", person_path(person), :data => { :confirm => "Are you sure?" }, :method => :delete

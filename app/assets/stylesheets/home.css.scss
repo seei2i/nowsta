@@ -1,3 +1,137 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$nowsta-darkblue: hsla(214, 24.8227%, 27.6471%, 1.0000);
+$nowsta-blue:     hsla(215, 14.4000%, 49.0196%, 1.0000);
+$nowsta-red:      hsla(342, 93.5223%, 51.5686%, 1.0000);
+
+@font-face {
+  font-family: 'Proxima';
+  src: url('Proxima.eot');
+  src: url('Proxima.eot?iefix') format('eot'),
+       url('Proxima.woff') format('woff'),
+       url('Proxima.ttf') format('truetype'),
+       url('Proxima.svg#webfontfvFLBU0N') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.navbar-default {
+  background-color: $nowsta-darkblue;
+  border: 0px Solid #e7e7e7;
+  border-top: 5px Solid $nowsta-red;
+}
+
+.navbar-default .navbar-brand {
+  color: #FFF;
+  font-weight: 800;
+  font-size: 22px;
+  text-shadow: none;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  background-color: #fff;
+}
+
+.authform form {
+  background-color: whitesmoke;
+  border: 0px solid #e3e3e3;
+}
+
+.navbar-default .navbar-nav > li > a {
+  span {
+    color: #CCC;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: -16px;
+    vertical-align: top;
+  }
+  color: $nowsta-blue;
+  font-size: 20px;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  &:hover {
+    span {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: -16px;
+    vertical-align: top;
+  }
+  color: #FFF;
+  }
+}
+
+.navbar-default .navbar-nav > .active > a {
+  color: #FFF;
+  background-color: $nowsta-blue;
+  span {
+    color: #FFFFFF;
+  }
+  &:hover {
+    span {
+    color: #FFFFFF;
+    vertical-align: top;
+  }
+  color: #FFF;
+  background-color: $nowsta-blue;
+  }
+}
+
+.navbar-magic {
+  background-color: $nowsta-blue;
+  border: 0px Solid #e7e7e7;
+  margin-top: 50px;
+  border-radius: 0px;
+}
+
+.navbar-magic .navbar-nav > li > a {
+  span {
+    color: #CCC;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: -16px;
+    vertical-align: top;
+  }
+  color: #CCC;
+  font-size: 20px;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  &:hover {
+    span {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: -16px;
+    vertical-align: top;
+  }
+  color: #FFF;
+  }
+}
+.navbar-magic .navbar-nav.pull-right > li > a {
+  margin-right: -20px;
+  &:hover {
+    background-color: transparent;
+    color: #FFF;
+    border: 0px Solid #FFF;
+    span {
+      color: #FFF;
+    }
+  }
+}
+
+.navbar-magic .navbar-nav.pull-left > li > a {
+  margin-left: -16px;
+  &:hover {
+    background-color: transparent;
+    color: #FFF;
+    border: 0px Solid #FFF;
+    span {
+      color: #FFF;
+    }
+  }
+}

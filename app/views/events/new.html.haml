@@ -1,0 +1,20 @@
+.container
+  .col-xs-12
+    %h3 Add a New Event
+    = simple_form_for :event, :html => {:multipart => true}, :url => events_path do |f|
+      %br
+      = f.input :name, :label => 'Event Name', :placeholder => 'Event Name', :autofocus => true
+      %br
+      = f.input :description,  :label => 'Event Description', :placeholder => 'Event Description', :as => :text, :input_html => { :rows => 20 , :class => "col-xs-12"}
+      %br
+      = f.input :date, :label => 'Event Date', :placeholder => 'Sat Jan 25'
+      %br
+      = f.input :time, :label => 'Event Time', :placeholder => '8PM-2AM', :autofocus => true
+      %br
+      = f.input :location, :label => 'Event Location', :placeholder => '123 Fake St. New York, NY', :autofocus => true
+      %br
+      = f.button :submit, 'Add Event', :class => 'btn-primary'
+    = link_to "Back", :back, :class => "pull-left"
+    %br
+    %br
+    %br
