@@ -36,7 +36,14 @@ class PeopleController < ApplicationController
 
   def destroy
     @person.destroy
-    redirect_to people_path, :notice => "Person deleted sucessfully."
+    authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
+    user = User.find(@person.user_id.to_i)
+    unless user == current_user
+      user.destroy
+      redirect_to users_path, :notice => "User deleted."
+    else
+      redirect_to users_path, :notice => "Can't delete yourself."
+    end
   end
 
 private
