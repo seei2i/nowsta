@@ -13,6 +13,7 @@ Bundler.require(:default, Rails.env)
 
 module Nowsta
   class Application < Rails::Application
+    config.serve_static_assets = true
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       g.test_framework :rspec
