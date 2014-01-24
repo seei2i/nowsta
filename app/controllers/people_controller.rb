@@ -16,7 +16,7 @@ class PeopleController < ApplicationController
     @person.user_id = @user.id
     @person.status = 'Invited'
     @person.save
-    redirect_to people_path, notice: "Person invited!"
+    redirect_to root_path, notice: "You've Been invited! Please check your email."
   end
 
   def edit
