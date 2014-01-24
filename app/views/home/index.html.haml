@@ -6,4 +6,18 @@
 .container
   .row
     / %a.glyphicon.glyphicon-user + 
-    %h1 BETA!
+    %h1 Get your team on the same page.
+    %br
+    .col-md-3
+    .col-md-6
+      .input-group.input-group-lg
+        %input.form-control{:placeholder => "Enter email", :type => "email"}
+        %span.input-group-btn
+          %button.btn.btn-default{:type => "submit"} Request Invitation
+    .col-md-3
+    / %br
+    / = simple_form_for :person, :html => {:multipart => true}, :url => people_path do |f|
+    /   %br
+    /   = f.input :email, :label => 'Email', :placeholder => 'Email'
+    /   %br
+    /   = f.button :submit, 'Add Person', :class => 'btn-primary'

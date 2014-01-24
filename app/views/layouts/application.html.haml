@@ -4,14 +4,23 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title= content_for?(:title) ? yield(:title) : 'Nowsta'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Nowsta'}"}
-    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
     = csrf_meta_tags
     %link{:href => "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "http://fonts.googleapis.com/css?family=Signika:400,600,700,300", :rel => "stylesheet", :type => "text/css"}
-  %body
+  %body{:class => "#{controller_name} #{action_name}", 'data-spy' => 'scroll', 'data-target' => '#navbar'}
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
       = render 'layouts/messages'
       = yield
+    :javascript
+      var __lc = {};
+      __lc.license = 3821931;
+      
+      (function() {
+        var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+        lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+      })();

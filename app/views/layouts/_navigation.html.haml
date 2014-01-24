@@ -1,33 +1,34 @@
 -# navigation styled for Bootstrap 3.0
 %nav.navbar.navbar-default.navbar-fixed-top
-  .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to 'NOWSTA', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav.pull-right
-        = render 'layouts/navigation_links'
+  / .container
+  .navbar-header
+    %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    = link_to(image_tag('logobeta.png'), root_path, :class => 'topper')
+    / = link_to 'NOWSTA', root_path, class: 'navbar-brand'
+  .collapse.navbar-collapse
+    %ul.nav.navbar-nav.pull-right
+      = render 'layouts/navigation_links'
 %nav.navbar.navbar-magic
-  .container
-    %ul.nav.navbar-nav.pull-left
+  / .container
+  %ul.nav.navbar-nav.pull-left
+    %li
+    / %a.glyphicon.glyphicon-search{:href => '#'}
+    / %span.glyphicon.glyphicon-user
+  / %form.navbar-form.navbar-left{:role => "search"}
+  /   .form-group
+  /     %input.form-control{:placeholder => "Search", :type => "text"}
+  /   %button.btn.btn-default{:type => "submit"} Submit
+  - if current_page?(people_path)
+    %ul.nav.navbar-nav.pull-right
       %li
-        %a.glyphicon.glyphicon-search{:href => '#'}
-          / %span.glyphicon.glyphicon-user
-    / %form.navbar-form.navbar-left{:role => "search"}
-    /   .form-group
-    /     %input.form-control{:placeholder => "Search", :type => "text"}
-    /   %button.btn.btn-default{:type => "submit"} Submit
-    - if current_page?(people_path)
-      %ul.nav.navbar-nav.pull-right
-        %li
-          %a.glyphicon.glyphicon-user{:href => new_person_path}
-            %span +
-    - if current_page?(events_path)
-      %ul.nav.navbar-nav.pull-right
-        %li
-          %a.glyphicon.glyphicon-star{:href => new_event_path}
-            %span +
+        %a.glyphicon.glyphicon-user{:href => new_person_path}
+          %span +
+  - if current_page?(events_path)
+    %ul.nav.navbar-nav.pull-right
+      %li
+        %a.glyphicon.glyphicon-star{:href => new_event_path}
+          %span +
