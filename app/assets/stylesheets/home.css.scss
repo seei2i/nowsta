@@ -90,18 +90,20 @@ main {
 }
 
 .navbar-magic .navbar-nav > li > a {
+  opacity: 0.65;
   span {
-    color: #CCC;
+    color: #FFF;
     font-weight: bold;
     font-size: 13px;
     margin-left: -16px;
     vertical-align: top;
   }
-  color: #CCC;
+  color: #FFF;
   font-size: 20px;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   &:hover {
+    opacity: 1.0;
     span {
     color: #FFFFFF;
     font-weight: bold;
