@@ -1,4 +1,9 @@
 - if user_signed_in?
+  - if current_user.has_role? :admin
+    %li{:class => current_page?(users_path) && 'active'}
+      %a.glyphicon.glyphicon-star{:href => users_path}
+        %span ADMIN
+- if user_signed_in?
   %li{:class => current_page?(people_path) && 'active'}
     %a.glyphicon.glyphicon-user{:href => people_path}
       %span PEOPLE
@@ -13,6 +18,7 @@
   /     %span MESSAGES
   %li
     %a.glyphicon.glyphicon-remove{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"}
+      %span SIGNOUT
   / %li{:class => current_page?(edit_user_registration_path) && 'active'}
   /   = link_to "Edit Account", edit_user_registration_path 
   / %li{:class => current_page?(users_path) && 'active'}
@@ -22,4 +28,5 @@
     = link_to "Sign In", new_user_session_path 
   / %li{:class => current_page?(new_user_registration_path) && 'active'}
   /   = link_to "Sign up", new_user_registration_path 
-  
+
+

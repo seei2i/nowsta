@@ -46,23 +46,23 @@ main {
   span {
     color: #CCC;
     font-weight: bold;
-    font-size: 16px;
-    margin-left: -16px;
+    font-size: 13px;
+    margin-left: -6px;
     vertical-align: top;
   }
   color: $nowsta-blue;
-  font-size: 20px;
+  font-size: 23px;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   &:hover {
     span {
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 16px;
-    margin-left: -16px;
+    font-size: 13px;
+    margin-left: -6px;
     vertical-align: top;
   }
-  color: #FFF;
+  color: #CCC;
   }
 }
 
@@ -93,7 +93,7 @@ main {
   span {
     color: #CCC;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 13px;
     margin-left: -16px;
     vertical-align: top;
   }
@@ -105,7 +105,7 @@ main {
     span {
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 13px;
     margin-left: -16px;
     vertical-align: top;
   }
@@ -293,3 +293,15 @@ a.topper img {
   }
 }
 
+
+.authform form {
+  background: hsla(0, 0%, 100.0000%, 0.65)
+
+  }
+body.people.index, body.events.index, body.users.index {
+  .container {
+    background: hsla(0, 0%, 100.0000%, 0.85);
+    padding: 20px 20px;
+    border-radius: 20px;
+  }
+}
