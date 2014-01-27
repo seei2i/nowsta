@@ -17,7 +17,7 @@
   /   %a.glyphicon.glyphicon-comment{:href => '#'}
   /     %span MESSAGES
   %li
-    %a.glyphicon.glyphicon-remove{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"}
+    %a.glyphicon.glyphicon-remove{"data-method" => "delete", :href => destroy_user_session_path, :rel => "nofollow"}
       %span SIGNOUT
   / %li{:class => current_page?(edit_user_registration_path) && 'active'}
   /   = link_to "Edit Account", edit_user_registration_path 
