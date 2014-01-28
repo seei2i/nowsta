@@ -303,10 +303,14 @@ a.topper img {
   background: hsla(0, 0%, 100.0000%, 0.65)
 
   }
-body.people.index, body.events.index, body.users.index, body.events.new {
+body.people.index, body.events.index, body.users.index, body.events.new, body.events.show {
   .container {
     background: hsla(0, 0%, 100.0000%, 0.85);
     padding: 20px 20px;
     border-radius: 20px;
   }
+}
+
+.modal { 
+  background: #FFF;
 }

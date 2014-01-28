@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @users = User.all
+    @person = People.all
   end
 
   def show
@@ -23,7 +24,9 @@ class UsersController < ApplicationController
   def destroy
     authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
     user = User.find(params[:id])
+    person = People.find_by_user_id(params[:id])
     unless user == current_user
+      person.destroy
       user.destroy
       redirect_to users_path, :notice => "User deleted."
     else

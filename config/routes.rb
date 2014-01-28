@@ -1,4 +1,5 @@
 Nowsta::Application.routes.draw do
+  resources :jobs
   resources :people
   resources :events
   devise_for :users, :controllers => {:registrations => "registrations", :users => "users"}

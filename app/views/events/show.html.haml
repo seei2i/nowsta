@@ -6,3 +6,29 @@
     %p= @event.time
     %p= @event.location
     %p= link_to 'Back', events_path 
+  .col-xs-12
+    %h4 People for this event
+    %table.table.table-condensed
+      %thead
+        %tr
+          %th Person
+          %th Status
+          %th Edit 
+          %th Remove
+      %tbody
+        - if @event.people == nil
+        - else
+          - @event.people.each do |person|
+            %tr
+              %td= person.name
+              %td= person.position
+              %td Filler
+              %td Filler
+              / %td= link_to 'Edit', edit_event_path(event)
+              / %td= link_to "Remove", event_path(event), :data => { :confirm => "Are you sure?" }, :method => :delete
+  .col-xs-12
+    = simple_form_for :jobs, :html => {:multipart => true}, :url => jobs_path do |f|
+      %h4 Add a Person to this event
+      = f.hidden_field :event_id, :value => @event.id
+      = f.collection_select(:people_id, People.all, :id, :name, :prompt => 'Select Person')
+      = f.button :submit, 'Add Person to Event', :class => 'btn-primary'

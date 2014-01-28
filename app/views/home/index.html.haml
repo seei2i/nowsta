@@ -3,24 +3,29 @@
 /   %p
 /     User: #{link_to user.name, user}
 <br><br><br><br>
-.container
-  .row
-    / %a.glyphicon.glyphicon-user + 
-    %h1 Get your team on the same page.
-    %br
-    / .col-md-3
-    / .col-md-6
-    /   .input-group.input-group-lg
-    /     %input.form-control{:placeholder => "Enter email", :type => "email"}
-    /     %span.input-group-btn
-    /       %button.btn.btn-default{:type => "submit"} Request Invitation
-    / .col-md-3
-    %br
-    .col-md-3
-    .col-md-6
-      = simple_form_for :person, :html => {:multipart => true}, :defaults => { :input_html => { :class => "form-control" } }, :url => people_path do |f|
-        .input-group
-          = f.input :email, :label => false, :type => "email", :placeholder => 'Email'
-          %span.input-group-btn
-            = f.button :submit, 'Request Invitiation', :class => 'btn btn-default'
-    .col-md-3
+- if user_signed_in?
+  .container
+    .row
+      %h1 Welcome to Nowsta.
+- else 
+  .container
+    .row
+      / %a.glyphicon.glyphicon-user + 
+      %h1 Get your team on the same page.
+      %br
+      / .col-md-3
+      / .col-md-6
+      /   .input-group.input-group-lg
+      /     %input.form-control{:placeholder => "Enter email", :type => "email"}
+      /     %span.input-group-btn
+      /       %button.btn.btn-default{:type => "submit"} Request Invitation
+      / .col-md-3
+      %br
+      .col-md-3
+      .col-md-6
+        = simple_form_for :person, :html => {:multipart => true}, :defaults => { :input_html => { :class => "form-control" } }, :url => people_path do |f|
+          .input-group
+            = f.input :email, :label => false, :type => "email", :placeholder => 'Email'
+            %span.input-group-btn
+              = f.button :submit, 'Request Invitiation', :class => 'btn btn-default'
+      .col-md-3

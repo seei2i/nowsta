@@ -13,6 +13,7 @@ class PeopleController < ApplicationController
     @person = People.new(person_params)
     @person.save
     @user = User.invite!({:email => @person.email}, current_user)
+    @user.name = @person.name
     @person.user_id = @user.id
     @person.status = 'Invited'
     @person.save

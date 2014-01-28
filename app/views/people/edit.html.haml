@@ -1,17 +1,17 @@
-.container
-  .col-xs-12
-    = simple_form_for(@person, :as => @person, :url => person_path(@person), :html => { :method => :put, :class => 'form-vertical' }) do |f|
-      %br
-      = f.input :name, :label => 'Name', :placeholder => 'Name', :autofocus => true
-      %br
-      = f.input :phone, :label => 'Phone', :placeholder => 'Phone Number'
-      %br
-      = f.input :position, :label => 'Position', :placeholder => 'Position'
-      %br
-      = f.input :email, :label => 'Email', :placeholder => 'Email', :autofocus => true
-      %br
-      = f.button :submit, 'Update Person', :class => 'btn-primary'
-    = link_to "Remove Person", person_path(@person), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => "pull-right"
+.authform
+  %h3 Edit Person
+  = simple_form_for(@person, :as => @person, :url => person_path(@person), :html => { :method => :put, :class => 'form-vertical' }, :defaults => { :input_html => { :class => "form-control" } }) do |f|
     %br
+    = f.input :name, :label => 'Name', :placeholder => 'Name', :autofocus => true
     %br
+    = f.input :phone, :label => 'Phone', :placeholder => 'Phone Number'
     %br
+    = f.input :position, :label => 'Position', :placeholder => 'Position'
+    %br
+    = f.input :email, :label => 'Email', :placeholder => 'Email', :autofocus => true
+    %br
+    = f.button :submit, 'Update Person', :class => 'btn-primary'
+  = link_to "Remove Person", person_path(@person), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => "pull-right"
+  %br
+  %br
+  %br
