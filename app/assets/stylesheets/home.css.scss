@@ -49,6 +49,9 @@ main {
     font-size: 13px;
     margin-left: -6px;
     vertical-align: top;
+    -webkit-transition: all 0.3s ease-in-out;
+     -moz-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
   }
   color: $nowsta-blue;
   font-size: 23px;
@@ -56,7 +59,7 @@ main {
   -webkit-font-smoothing: antialiased;
   &:hover {
     span {
-    color: #FFFFFF;
+    color: $nowsta-blue;
     font-weight: bold;
     font-size: 13px;
     margin-left: -6px;
