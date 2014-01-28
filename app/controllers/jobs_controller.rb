@@ -1,8 +1,16 @@
 class JobsController < ApplicationController
-	def create
+  def create
     @job = Job.new(job_params)
     @job.save
-    redirect_to event_path(@job.event_id), notice: "You've Added Someone to the job."
+    @mailuser = People.find(@job.people_id)
+      if @job.save
+        JobMailer.work_confirmation(@mailuser).deliver
+        flash[:success] = "Success! Check your email."
+        redirect_to event_path(@job.event_id)
+      else
+        flash[:faliure] = "Invalid entry, try again."
+        redirect_to event_path(@job.event_id)
+      end
   end
 private
   def job_params
