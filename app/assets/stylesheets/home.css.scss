@@ -145,9 +145,9 @@ main {
 
 body {
 
-  background: url(mainbg.jpg) left top no-repeat;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='mainbg.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='mainbg.jpg', sizingMethod='scale')";
+  background: url(bgTable.jpg) left top no-repeat;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bgTable.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bgTable.jpg', sizingMethod='scale')";
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
