@@ -10,7 +10,7 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
-
+config.assets.initialize_on_precompile = false 
 module Nowsta
   class Application < Rails::Application
     # don't generate RSpec tests for views and helpers
@@ -36,6 +36,6 @@ module Nowsta
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     # config.assets.enabled = true
-    config.assets.initialize_on_precompile = false 
+    
   end
 end
