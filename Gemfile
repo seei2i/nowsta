@@ -20,6 +20,7 @@ gem 'thin'
 gem 'devise_invitable'
 gem 'shortener'
 gem 'jquery-turbolinks'
+gem 'rails_12factor'
 
 # gem 'protected_attributes'
 group :development do
