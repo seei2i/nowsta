@@ -1,31 +1,433 @@
-/ %h3 Home
-/ - @users.each do |user|
-/   %p
-/     User: #{link_to user.name, user}
-<br><br><br><br>
-- if user_signed_in?
-  .container
+#page
+  %header#header.smooth
     .row
-      %h1 Welcome to Nowsta.
-- else 
-  .container
+      .col-xs-12
+        #intro.text-container{:style => "position:absolute;top:150px;left:0px;width:100%;"}
+          #logo
+          %h1 Get your team on the same page.
+          %h2 
+            %a.scroll{:href => '#contacts'} Get Started
+          #explore
+            %a.scroll{:href => '#about'}
+              %h3 Learn More
+              %i.icon-angle-down.icon-4x
+  #top-bar
+    .container
+      .row
+        .col-md-4
+          #logo-lettering
+            %a.scroll{:href => "#header"}
+              = image_tag('logo3.png')
+          #menu-mobile.hidden-md.hidden-lg
+            %i.icon-reorder.icon-2x
+        .col-md-8
+          %nav#top-navigation
+            %ul.list-inline
+              - if user_signed_in?
+                %li= link_to 'people',         people_path 
+                %li= link_to 'events',         events_path
+                %li
+                  %a{"data-method" => "delete", :href => destroy_user_session_path, :rel => "nofollow"} sign out
+              - else
+                %li= link_to 'about',          '#about'
+                %li= link_to 'staffing',       '#works'
+                %li= link_to 'services',       '#services'
+                %li= link_to 'customers',      '#customers'
+                %li= link_to 'request invite', '#contacts'
+                %li= link_to 'sign in',         new_user_session_path 
+  %section#about
     .row
-      / %a.glyphicon.glyphicon-user + 
-      %h1 Get your team on the same page.
-      %br
-      / .col-md-3
-      / .col-md-6
-      /   .input-group.input-group-lg
-      /     %input.form-control{:placeholder => "Enter email", :type => "email"}
-      /     %span.input-group-btn
-      /       %button.btn.btn-default{:type => "submit"} Request Invitation
-      / .col-md-3
-      %br
-      .col-md-3
-      .col-md-6
-        = simple_form_for :person, :html => {:multipart => true}, :defaults => { :input_html => { :class => "form-control" } }, :url => people_path do |f|
-          .input-group
-            = f.input :email, :label => false, :type => "email", :placeholder => 'Email'
-            %span.input-group-btn
-              = f.button :submit, 'Request Invitiation', :class => 'btn btn-default'
-      .col-md-3
+      .col-xs-12.col-sm-6.col-sm-offset-3.intro
+        %h1 EPO Managment
+        %p We make it easier than ever for you to coordinate the events, people, & organizations that are important to your business.
+    .container.row
+      .col-xs-6.col-sm-6.col-md-3.member
+        .member-photo
+          .image
+            %img{:alt => "Team Member 1", :src => "http://placehold.it/768x960/F4594E/1a1a1a&amp;text=768x960"}
+          .image-hover
+            %img{:alt => "Team Member 1", :src => "http://placehold.it/768x960/1a1a1a/F4594E&amp;text=Cotton"}
+          .member-hover.hidden-xs.hidden-sm
+            .list-container
+              %ul.list-inline.social
+                %li
+                  %a
+                    %i.icon-facebook.icon-3x
+                %li
+                  %a
+                    %i.icon-twitter.icon-3x
+                %li
+                  %a
+                    %i.icon-linkedin.icon-3x
+        %h5 Renato Leão
+        %p Creative Director
+        .list-container.visible-xs.visible-sm
+          %ul.list-inline
+            %li
+              %a
+                %i.icon-facebook.icon-2x
+            %li
+              %a
+                %i.icon-twitter.icon-2x
+            %li
+              %a
+                %i.icon-envelope.icon-2x
+      .col-xs-6.col-sm-6.col-md-3.member
+        .member-photo
+          .image
+            %img{:alt => "Team Member 3", :src => "http://placehold.it/768x960/F4594E/1a1a1a&amp;text=768x960"}
+          .image-hover
+            %img{:alt => "Team Member 3", :src => "http://placehold.it/768x960/1a1a1a/F4594E&amp;text=Cotton"}
+          .member-hover.hidden-xs.hidden-sm
+            .list-container
+              %ul.list-inline.social
+                %li
+                  %a
+                    %i.icon-facebook.icon-3x
+                %li
+                  %a
+                    %i.icon-twitter.icon-3x
+                %li
+                  %a
+                    %i.icon-linkedin.icon-3x
+        %h5 Sara Baião
+        %p Junior Designer
+        .list-container.visible-xs.visible-sm
+          %ul.list-inline
+            %li
+              %a
+                %i.icon-facebook.icon-2x
+            %li
+              %a
+                %i.icon-twitter.icon-2x
+            %li
+              %a
+                %i.icon-linkedin.icon-2x
+      .col-xs-6.col-sm-6.col-md-3.member
+        .member-photo
+          .image
+            %img{:alt => "Team Member 2", :src => "http://placehold.it/768x960/F4594E/1a1a1a&amp;text=768x960"}
+          .image-hover
+            %img{:alt => "Team Member 2", :src => "http://placehold.it/768x960/1a1a1a/F4594E&amp;text=Cotton"}
+          .member-hover.hidden-xs.hidden-sm
+            .list-container
+              %ul.list-inline.social
+                %li
+                  %a
+                    %i.icon-facebook.icon-3x
+                %li
+                  %a
+                    %i.icon-twitter.icon-3x
+                %li
+                  %a
+                    %i.icon-linkedin.icon-3x
+        %h5 João Saraiva
+        %p Lead Developer
+        .list-container.visible-xs.visible-sm
+          %ul.list-inline
+            %li
+              %a
+                %i.icon-facebook.icon-2x
+            %li
+              %a
+                %i.icon-twitter.icon-2x
+            %li
+              %a
+                %i.icon-linkedin.icon-2x
+      .col-xs-6.col-sm-6.col-md-3.member
+        .member-photo
+          %img{:alt => "Team Member 4", :src => "images/team/you.jpg"}
+            .member-hover.hidden-xs.hidden-sm
+              .list-container
+                %ul.list-inline.social
+                  %li
+                    %a.mail.scroll{:href => "#contacts"}
+                      %i.icon-envelope.icon-3x
+        %h5 We're Hiring!
+        %p This can be you!
+        .list-container.visible-xs.visible-sm
+          %ul.list-inline
+            %li
+              %a.mail.scroll{:href => "#contacts"}
+                %i.icon-envelope.icon-2x
+  / END TEAM SECTION
+  %section#works
+    .row
+      .col-xs-12.col-sm-6.col-sm-offset-3.intro
+        %h1 Staffing simplified.
+        %p Our system makes staffing a breeze
+    #w-filter.row
+      .col-xs-12
+        #work-filter.center-list
+          %ul.list-inline.hidden-xs
+            %li.filter.active{"data-filter" => "all"} all
+            %li.filter{"data-filter" => "branding"} branding
+            %li.filter{"data-filter" => "photography"} photography
+            %li.filter{"data-filter" => "illustration"} illustration
+            %li.filter{"data-filter" => "video"} video
+    #work-container.container.row
+      .col-xs-12.col-sm-4.mix.all.branding
+        #work-1.work
+          %img{:alt => "work", :src => "http://placehold.it/720x540/F4594E/1a1a1a&amp;text=720x540"}/
+          .work-info
+            %h6 Sample Caption 1
+      .col-xs-12.col-sm-4.mix.all.branding
+        #work-2.work
+          %img{:alt => "work", :src => "http://placehold.it/720x540/F4594E/1a1a1a&amp;text=aspect+ratio+4:3"}/
+          .work-info
+            %h6 Sample Caption 2
+      .col-xs-12.col-sm-4.end.mix.all.branding
+        #work-3.work
+          %img{:alt => "work", :src => "http://placehold.it/720x540/F4594E/1a1a1a&amp;text=720x540"}/
+          .work-info
+            %h6 Sample Caption 3
+      .col-xs-12.col-sm-4.mix.all.branding
+        #work-4.work
+          %img{:alt => "work", :src => "http://placehold.it/720x540/F4594E/1a1a1a&amp;text=aspect+ratio+4:3"}/
+          .work-info
+            %h6 Sample Caption 4
+      .col-xs-12.col-sm-4.mix.all.illustration
+        #work-5.work
+          %img{:alt => "work", :src => "http://placehold.it/720x540/F4594E/1a1a1a&amp;text=720x540"}/
+          .work-info
+            %h6 Sample Caption 5
+      .col-xs-12.col-sm-4.mix.all.photography
+        #work-6.work
+          %img{:alt => "work", :src => "http://placehold.it/720x540/F4594E/1a1a1a&amp;text=aspect+ratio+4:3"}/
+          .work-info
+            %h6 Sample Caption 6
+      .col-xs-12.col-sm-4.end.mix.all.video
+        #work-7.work
+          %img{:alt => "work", :src => "http://placehold.it/720x540/F4594E/1a1a1a&amp;text=720x540"}/
+          .work-info
+            %h6 Sample Caption 7
+      .col-xs-12.col-sm-4.mix.all.video
+        #work-8.work
+          %img{:alt => "work", :src => "http://placehold.it/720x540/F4594E/1a1a1a&amp;text=aspect+ratio+4:3"}/
+          .work-info
+            %h6 Sample Caption 8
+      .col-xs-12.col-sm-4.mix.all.video
+        #work-9.work
+          %img{:alt => "work", :src => "http://placehold.it/720x540/F4594E/1a1a1a&amp;text=720x540"}/
+          .work-info
+            %h6 Sample Caption 9
+  %section#services
+    .row
+      .col-xs-12.col-sm-6.col-sm-offset-3.intro
+        %h1 Major Services
+        %p Here are a few additional services we provide.
+    #services-list.container.row
+      .col-xs-3.col-sm-6.col-md-3
+        #branding.service.smooth
+          %img{:alt => "Branding", :src => "images/services/branding.svg"}
+            %h5.hidden-xs Branding
+            %p.hidden-xs Tattooed aliquip pariatur art party actually.  Ut chillwave pour-over narwhal.
+      .col-xs-3.col-sm-6.col-md-3
+        #web.service.smooth
+          %img{:alt => "Webdesign", :src => "images/services/web.svg"}
+            %h5.hidden-xs Webdesign
+            %p.hidden-xs Tattooed aliquip pariatur art party actually.  Ut chillwave pour-over narwhal.
+      .col-xs-3.col-sm-6.col-md-3
+        #illustration.service.smooth
+          %img{:alt => "Illustration", :src => "images/services/illustration.svg"}
+            %h5.hidden-xs Illustration
+            %p.hidden-xs Tattooed aliquip pariatur art party actually.  Ut chillwave pour-over narwhal.
+      .col-xs-3.col-sm-6.col-md-3
+        #video.service.smooth
+          %img{:alt => "Video", :src => "images/services/video.svg"}
+            %h5.hidden-xs Video
+            %p.hidden-xs Tattooed aliquip pariatur art party actually.  Ut chillwave pour-over narwhal.
+    .container
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          %ul#branding-skills.skills-bar
+            %li
+              %span.expand{"data-width" => "50%"}
+              %em Illustrator
+            %li
+              %span.expand{"data-width" => "80%"}
+              %em Photoshop
+          %ul#web-skills.skills-bar
+            %li
+              %span.expand{"data-width" => "10%"}
+              %em HTML 5
+            %li
+              %span.expand{"data-width" => "20%"}
+              %em CSS 3
+            %li
+              %span.expand{"data-width" => "90%"}
+              %em jQuery
+          %ul#illustration-skills.skills-bar
+            %li
+              %span.expand{"data-width" => "50%"}
+              %em Illustrator
+          %ul#video-skills.skills-bar
+            %li
+              %span.expand{"data-width" => "50%"}
+              %em After Effects
+            %li
+              %span.expand{"data-width" => "60%"}
+              %em Premiere
+            %li
+              %span.expand{"data-width" => "30%"}
+              %em Final Cut
+  %section#customers
+    .row
+      .col-xs-12.col-sm-6.col-sm-offset-3.intro
+        %h1 Our Customers
+        %p Here are a few of the customer's we've worked with in the past.
+    .studio
+      .row
+        .col-xs-12
+          #swiper.swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                %img{:alt => "slider image 1", :src => "http://placehold.it/960x540/F4594E/1a1a1a&amp;text=960x540"}/
+              .swiper-slide
+                %img{:alt => "slider image 2", :src => "http://placehold.it/960x540//1a1a1a/F4594E&amp;text=Best+with+aspect+ratio+16:9"}/
+              .swiper-slide
+                %img{:alt => "slider image 3", :src => "http://placehold.it/960x540/F4594E/1a1a1a&amp;text=960x540"}/
+              .swiper-slide
+                %img{:alt => "slider image 4", :src => "http://placehold.it/960x540//1a1a1a/F4594E&amp;text=Best+with+aspect+ratio+16:9"}/
+              .swiper-slide
+                %img{:alt => "slider image 5", :src => "http://placehold.it/960x540/F4594E/1a1a1a&amp;text=960x540"}/
+              .swiper-slide
+                %img{:alt => "slider image 6", :src => "http://placehold.it/960x540//1a1a1a/F4594E&amp;text=Best+with+aspect+ratio+16:9"}/
+          %a.arrow-left{:href => "#"}
+          %a.arrow-right{:href => "#"}
+      / .row
+      /   .col-xs-12
+      /     .swiper-container.swiper-parent
+      /       .pagination.pagination-parent
+      /       .swiper-wrapper
+      /         .swiper-slide.red-slide Slide 1
+      /         .swiper-slide.green-slide Slide 2
+      /         .swiper-slide.pink-slide Slide 3
+      /         .swiper-slide
+      /           .swiper-container.swiper-nested
+      /             .pagination.pagination-nested
+      /             .swiper-wrapper
+      /               .swiper-slide.green-slide Vertical Slide 1
+      /               .swiper-slide.blue-slide Vertical Slide 2
+      /               .swiper-slide.pink-slide Vertical Slide 3
+      /               .swiper-slide.green-slide Vertical Slide 4
+      /               .swiper-slide.blue-slide Vertical Slide 5
+      /               .swiper-slide.pink-slide Vertical Slide 6
+      /         .swiper-slide.orange-slide Slide 5
+      /         .swiper-slide.green-slide Slide 6
+      /         .swiper-slide.pink-slide Slide 7
+      /         .swiper-slide.blue-slide Slide 8
+  / END WORKS SECTION
+  / / START SOCIAL SECTION
+  / %section#feed
+  /   .row
+  /     .col-xs-12.col-sm-6.col-sm-offset-3.intro
+  /       %h2 Social feeder.
+  /       %p We're in more than one place at a time.
+  /   .row
+  /     .col-xs-12.col-sm-12
+  /       %ul#social-feed.centerUl
+  /         %li#flickr-feed.active
+  /           %a
+  /             %i.icon-flickr.icon-4x
+  /         %li#instagram-feed
+  /           %a
+  /             %i.icon-instagram.icon-4x
+  /         %li#twitter-feed
+  /           %a
+  /             %i.icon-twitter.icon-4x
+  /   / START FLICKR FEED
+  /   #flickr.row.feed
+  /   / END TWITTER FEED
+  /   / START INSTAGRAM FEED
+  /   #instagram.row.feed
+  /   / END INSTAGRAM FEED
+  /   / START TWITTER FEED
+  /   #twitter.row.feed
+  /   / END TWITTER FEED
+  / / END SOCIAL SECTION
+  / / START CONTACTS SECTION
+  %section#contacts
+    .row
+      .col-xs-12.col-sm-6.col-sm-offset-3.intro
+        %h1 Request an Invitation
+        %p Please answer all questions as accuratly as possible and we'll reach out to you. 
+    .row
+      .col-xs-12.col-sm-8.col-sm-offset-2.bumpup
+        = form_for :person, :html => {:id => 'contact-form'}, :url => people_path do |f|
+          .row
+            .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+              = f.text_field :email, :label => false, :type => "text", :placeholder => 'Email', :class => 'requiredField email', :id => 'email'
+            .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+              %input#submitted.button{:name => "submitted", :type => "hidden", :value => "SEND"}
+                %button#submit.btn.invitesubmit{:type => "submit"} SEND
+            .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+              %p#error.alert{"data-alert" => ""} Please fill in all data correctly.
+              %p#thanks.alert.alert-success{"data-alert" => ""} Thanks. We'll get back to you as soon as possible.
+              %p#timedout.alert{"data-alert" => ""} The connection to the server timed out.
+              %p#state.alert{"data-alert" => ""}
+    / .row
+    /   .col-xs-12.col-sm-6.col-sm-offset-3
+    /     .contact-info
+    /       .row
+    /         .col-sm-4.contact
+    /           .icon
+    /             %a
+    /               %i.icon-envelope.icon-3x
+    /           %p hello@digitalcookers.com
+    /         .col-sm-4.contact
+    /           .icon
+    /             %a{:href => "https://www.google.com/maps?daddr=Pra%C3%A7a+da+Rep%C3%BAblica,+3000-019+Coimbra,+Portugal&ie=UTF8&ll=40.20954,-8.419797&spn=0.009488,0.01929&sll=40.22875989954939,-8.416598004503014&sspn=0.1779943086948243,0.43959398257471627&t=m&dg=opt&z=16&iwloc=ddw1", :targe => "_blank"}
+    /               %i.icon-map-marker.icon-3x
+    /           %p
+    /             Street cookers
+    /             %br>/
+    /             0000-000
+    /             %br>/
+    /             Somewhere
+    /         .col-sm-4.contact
+    /           .icon
+    /             %a
+    /               %i.icon-phone.icon-3x
+    /           %p +351 912 222 222
+  / END CONTACTS SECTION
+  / START FOOTER
+  %footer
+    .row
+      .col-xs-12.col-sm-6.col-sm-offset-3
+        %hr/
+        #social-profiles
+          %ul.centerUl
+            %li
+              %a
+                %i.icon-facebook.icon-2x
+            %li
+              %a{:href => "https://twitter.com/digitalcookers", :target => "_blank"}
+                %i.icon-twitter.icon-2x
+            %li
+              %a
+                %i.icon-linkedin.icon-2x
+            %li
+              %a
+                %i.icon-instagram.icon-2x
+            %li
+              %a
+                %i.icon-flickr.icon-2x
+            %li
+              %a
+                %i.icon-google-plus.icon-2x
+    .row
+      .col-xs-12.col-sm-6.col-sm-offset-3
+        %p#copyrights ©2014 Nowsta.com | All rights reserved.
+#project-page
+  #project-top-bar
+    .row
+      .col-xs-2
+        #previous-project
+        #previous-project-name
+      .col-xs-8
+        #close-project
+      .col-xs-2
+        #next-project
+        #next-project-name
+  #project

@@ -2,315 +2,315 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$nowsta-darkblue: hsla(214, 24.8227%, 27.6471%, 1.0000);
-$nowsta-blue:     hsla(215, 14.4000%, 49.0196%, 1.0000);
-$nowsta-red:      hsla(342, 93.5223%, 51.5686%, 1.0000);
-
-@font-face {
-  font-family: 'Proxima';
-  src: url('Proxima.eot');
-  src: url('Proxima.eot?iefix') format('eot'),
-       url('Proxima.woff') format('woff'),
-       url('Proxima.ttf') format('truetype'),
-       url('Proxima.svg#webfontfvFLBU0N') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-.navbar-default {
-  background-color: $nowsta-darkblue;
-  border: 0px Solid #e7e7e7;
-  border-top: 5px Solid $nowsta-red;
-}
-
-.navbar-default .navbar-brand {
-  color: #FFF;
-  font-weight: 800;
-  font-size: 22px;
-  text-shadow: none;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-}
-
-main {
-  background-color: #fff;
-}
-
-.authform form {
-  background-color: whitesmoke;
-  border: 0px solid #e3e3e3;
-}
-
-.navbar-default .navbar-nav > li > a {
-  span {
-    color: #CCC;
-    font-weight: bold;
-    font-size: 13px;
-    margin-left: -6px;
-    vertical-align: top;
-    -webkit-transition: all 0.3s ease-in-out;
-     -moz-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-  }
-  color: $nowsta-blue;
-  font-size: 23px;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  &:hover {
-    span {
-    color: $nowsta-blue;
-    font-weight: bold;
-    font-size: 13px;
-    margin-left: -6px;
-    vertical-align: top;
-  }
-  color: #CCC;
-  }
-}
-
-.navbar-default .navbar-nav > .active > a {
-  color: #FFF;
-  background-color: $nowsta-blue;
-  span {
-    color: #FFFFFF;
-  }
-  &:hover {
-    span {
-    color: #FFFFFF;
-    vertical-align: top;
-  }
-  color: #FFF;
-  background-color: $nowsta-blue;
-  }
-}
-
-.navbar-magic {
-  background-color: $nowsta-blue;
-  border: 0px Solid #e7e7e7;
-  margin-top: 50px;
-  border-radius: 0px;
-}
-
-.navbar-magic .navbar-nav > li > a {
-  opacity: 0.65;
-  span {
-    color: #FFF;
-    font-weight: bold;
-    font-size: 13px;
-    margin-left: -16px;
-    vertical-align: top;
-  }
-  color: #FFF;
-  font-size: 20px;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  &:hover {
-    opacity: 1.0;
-    span {
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 13px;
-    margin-left: -16px;
-    vertical-align: top;
-  }
-  color: #FFF;
-  }
-}
-.navbar-magic .navbar-nav.pull-right > li > a {
-  margin-right: -20px;
-  &:hover {
-    background-color: transparent;
-    color: #FFF;
-    border: 0px Solid #FFF;
-    span {
-      color: #FFF;
-    }
-  }
-}
-
-.navbar-magic .navbar-nav.pull-left > li > a {
-  margin-left: -16px;
-  &:hover {
-    background-color: transparent;
-    color: #FFF;
-    border: 0px Solid #FFF;
-    span {
-      color: #FFF;
-    }
-  }
-}
-
-
-
-body {
-
-  background: url(bgTable.jpg) left top no-repeat;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bgTable.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bgTable.jpg', sizingMethod='scale')";
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;
-  main, .navbar-magic {
-    background: transparent;
-  }
-
-  .navbar-default {
-    background: transparent;
-    border: 0px Solid transparent;
-    border-top: 5px Solid transparent;
-  }
-  h1 {
-    color: #FFF;
-    text-align: center;
-    -webkit-font-smoothing: antialiased;
-          font-smoothing: antialiased;
-    font-size: 50px;
-  }
-}
-
-a.topper img {
-  width: 225px;
-  padding: 15px 30px;
-}
-
-.pull-right {
-  margin-right: 20px;
-  margin-top: 15px;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #8D927F;
-  border: 1px solid #cbd99c;
-  font-size: 20px;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  background: #FFF;
-  border-radius: 25px;
-  padding: 5px 15px;
-  font-size: 13px;
-  text-transform: uppercase;
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  margin-right: 10px;
-  opacity: 0.65;
-  -webkit-transition: all 0.3s ease-in-out;
-     -moz-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-  &:hover {
-    opacity: 1.0;
-    color: #4b5852;
-    background: #FFF;
-    border: 1px solid transparent;
-  }
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #FFF;
-}
-
-.navbar-default .navbar-toggle {
-  opacity: 0.65;
-  border-color: transparent;
-  -webkit-transition: all 0.3s ease-in-out;
-     -moz-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-  &:hover {
-    opacity: 1.0;
-    border-color: transparent;
-    background: transparent;
-  }
-}
-
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background: transparent;
-}
-
-
-.navbar-default .navbar-nav > .active > a {
-  color: #FFF;
-  background: transparent;
-  border-color: #fff;
-  &:hover {
-    opacity: 1.0;
-    background: transparent;
-    border-color: #fff;
-  }
-}
-
-#livechat-compact-container {
-  margin-right: 15px !important;
-  opacity: 0.65 !important;
-  position: fixed;
-  bottom: 0px;
-  right: 15px;
-  width: 200px !important;
-  height: 53px;
-  overflow: hidden;
-  visibility: visible;
-  z-index: 2147483639;
-  background-color: transparent;
-  -webkit-transition: opacity 0.3s ease-in-out;
-     -moz-transition: opacity 0.3s ease-in-out;
-          transition: opacity 0.3s ease-in-out;
-  &:hover {
-    opacity: 1.0 !important;
-  }
-}
-
-#livechat-full {
-  height: 430px !important;
-}
-
-
-.input-group-addon:first-child {
-  margin-right: -5px;
-  background: #fff;
-  border: 1px solid transparent;
-  opacity: 0.65;
-  padding: 0px 10px;
-}
-
-.input-group-lg > .input-group-addon {
-  font-size: 25px;
-  color: #969b85;
-
-}
-
-.input-group-btn:last-child > .btn {
-  opacity: 0.65;
-  background: #fff;
-  -webkit-transition: opacity 0.3s ease-in-out;
-     -moz-transition: opacity 0.3s ease-in-out;
-          transition: opacity 0.3s ease-in-out;
-  border: 1px solid #e7db99;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  color: #8D927F;
-  &:hover {
-    opacity: 1.0;
-    border: 1px solid #e7db99;
-  }
-}
-
-
-.authform form {
-  background: hsla(0, 0%, 100.0000%, 0.65)
-
-  }
-body.people.index, body.events.index, body.users.index, body.events.new, body.events.show, body.registrations.edit, body.people.new {
-  .container {
-    background: hsla(0, 0%, 100.0000%, 0.85);
-    padding: 20px 20px;
-    border-radius: 20px;
-  }
-}
-
-.modal { 
-  background: #FFF;
-}
+// $nowsta-darkblue: hsla(214, 24.8227%, 27.6471%, 1.0000);
+// $nowsta-blue:     hsla(215, 14.4000%, 49.0196%, 1.0000);
+// $nowsta-red:      hsla(342, 93.5223%, 51.5686%, 1.0000);
+// 
+// @font-face {
+//   font-family: 'Proxima';
+//   src: url('Proxima.eot');
+//   src: url('Proxima.eot?iefix') format('eot'),
+//        url('Proxima.woff') format('woff'),
+//        url('Proxima.ttf') format('truetype'),
+//        url('Proxima.svg#webfontfvFLBU0N') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// 
+// 
+// .navbar-default {
+//   background-color: $nowsta-darkblue;
+//   border: 0px Solid #e7e7e7;
+//   border-top: 5px Solid $nowsta-red;
+// }
+// 
+// .navbar-default .navbar-brand {
+//   color: #FFF;
+//   font-weight: 800;
+//   font-size: 22px;
+//   text-shadow: none;
+//   font-smoothing: antialiased;
+//   -webkit-font-smoothing: antialiased;
+// }
+// 
+// main {
+//   background-color: #fff;
+// }
+// 
+// .authform form {
+//   background-color: whitesmoke;
+//   border: 0px solid #e3e3e3;
+// }
+// 
+// .navbar-default .navbar-nav > li > a {
+//   span {
+//     color: #CCC;
+//     font-weight: bold;
+//     font-size: 13px;
+//     margin-left: -6px;
+//     vertical-align: top;
+//     -webkit-transition: all 0.3s ease-in-out;
+//      -moz-transition: all 0.3s ease-in-out;
+//           transition: all 0.3s ease-in-out;
+//   }
+//   color: $nowsta-blue;
+//   font-size: 23px;
+//   font-smoothing: antialiased;
+//   -webkit-font-smoothing: antialiased;
+//   &:hover {
+//     span {
+//     color: $nowsta-blue;
+//     font-weight: bold;
+//     font-size: 13px;
+//     margin-left: -6px;
+//     vertical-align: top;
+//   }
+//   color: #CCC;
+//   }
+// }
+// 
+// .navbar-default .navbar-nav > .active > a {
+//   color: #FFF;
+//   background-color: $nowsta-blue;
+//   span {
+//     color: #FFFFFF;
+//   }
+//   &:hover {
+//     span {
+//     color: #FFFFFF;
+//     vertical-align: top;
+//   }
+//   color: #FFF;
+//   background-color: $nowsta-blue;
+//   }
+// }
+// 
+// .navbar-magic {
+//   background-color: $nowsta-blue;
+//   border: 0px Solid #e7e7e7;
+//   margin-top: 50px;
+//   border-radius: 0px;
+// }
+// 
+// .navbar-magic .navbar-nav > li > a {
+//   opacity: 0.65;
+//   span {
+//     color: #FFF;
+//     font-weight: bold;
+//     font-size: 13px;
+//     margin-left: -16px;
+//     vertical-align: top;
+//   }
+//   color: #FFF;
+//   font-size: 20px;
+//   font-smoothing: antialiased;
+//   -webkit-font-smoothing: antialiased;
+//   &:hover {
+//     opacity: 1.0;
+//     span {
+//     color: #FFFFFF;
+//     font-weight: bold;
+//     font-size: 13px;
+//     margin-left: -16px;
+//     vertical-align: top;
+//   }
+//   color: #FFF;
+//   }
+// }
+// .navbar-magic .navbar-nav.pull-right > li > a {
+//   margin-right: -20px;
+//   &:hover {
+//     background-color: transparent;
+//     color: #FFF;
+//     border: 0px Solid #FFF;
+//     span {
+//       color: #FFF;
+//     }
+//   }
+// }
+// 
+// .navbar-magic .navbar-nav.pull-left > li > a {
+//   margin-left: -16px;
+//   &:hover {
+//     background-color: transparent;
+//     color: #FFF;
+//     border: 0px Solid #FFF;
+//     span {
+//       color: #FFF;
+//     }
+//   }
+// }
+// 
+// 
+// 
+// body {
+// 
+//   background: url(bgTable.jpg) left top no-repeat;
+//   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bgTable.jpg', sizingMethod='scale');
+//   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bgTable.jpg', sizingMethod='scale')";
+//   -webkit-background-size: cover;
+//      -moz-background-size: cover;
+//        -o-background-size: cover;
+//           background-size: cover;
+//   main, .navbar-magic {
+//     background: transparent;
+//   }
+// 
+//   .navbar-default {
+//     background: transparent;
+//     border: 0px Solid transparent;
+//     border-top: 5px Solid transparent;
+//   }
+//   h1 {
+//     color: #FFF;
+//     text-align: center;
+//     -webkit-font-smoothing: antialiased;
+//           font-smoothing: antialiased;
+//     font-size: 50px;
+//   }
+// }
+// 
+// a.topper img {
+//   width: 225px;
+//   padding: 15px 30px;
+// }
+// 
+// .pull-right {
+//   margin-right: 20px;
+//   margin-top: 15px;
+// }
+// 
+// .navbar-default .navbar-nav > li > a {
+//   color: #8D927F;
+//   border: 1px solid #cbd99c;
+//   font-size: 20px;
+//   font-smoothing: antialiased;
+//   -webkit-font-smoothing: antialiased;
+//   background: #FFF;
+//   border-radius: 25px;
+//   padding: 5px 15px;
+//   font-size: 13px;
+//   text-transform: uppercase;
+//   font-weight: 500;
+//   -webkit-font-smoothing: antialiased;
+//   font-smoothing: antialiased;
+//   margin-right: 10px;
+//   opacity: 0.65;
+//   -webkit-transition: all 0.3s ease-in-out;
+//      -moz-transition: all 0.3s ease-in-out;
+//           transition: all 0.3s ease-in-out;
+//   &:hover {
+//     opacity: 1.0;
+//     color: #4b5852;
+//     background: #FFF;
+//     border: 1px solid transparent;
+//   }
+// }
+// 
+// .navbar-default .navbar-toggle .icon-bar {
+//   background-color: #FFF;
+// }
+// 
+// .navbar-default .navbar-toggle {
+//   opacity: 0.65;
+//   border-color: transparent;
+//   -webkit-transition: all 0.3s ease-in-out;
+//      -moz-transition: all 0.3s ease-in-out;
+//           transition: all 0.3s ease-in-out;
+//   &:hover {
+//     opacity: 1.0;
+//     border-color: transparent;
+//     background: transparent;
+//   }
+// }
+// 
+// .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+//   background: transparent;
+// }
+// 
+// 
+// .navbar-default .navbar-nav > .active > a {
+//   color: #FFF;
+//   background: transparent;
+//   border-color: #fff;
+//   &:hover {
+//     opacity: 1.0;
+//     background: transparent;
+//     border-color: #fff;
+//   }
+// }
+// 
+// #livechat-compact-container {
+//   margin-right: 15px !important;
+//   opacity: 0.65 !important;
+//   position: fixed;
+//   bottom: 0px;
+//   right: 15px;
+//   width: 200px !important;
+//   height: 53px;
+//   overflow: hidden;
+//   visibility: visible;
+//   z-index: 2147483639;
+//   background-color: transparent;
+//   -webkit-transition: opacity 0.3s ease-in-out;
+//      -moz-transition: opacity 0.3s ease-in-out;
+//           transition: opacity 0.3s ease-in-out;
+//   &:hover {
+//     opacity: 1.0 !important;
+//   }
+// }
+// 
+// #livechat-full {
+//   height: 430px !important;
+// }
+// 
+// 
+// .input-group-addon:first-child {
+//   margin-right: -5px;
+//   background: #fff;
+//   border: 1px solid transparent;
+//   opacity: 0.65;
+//   padding: 0px 10px;
+// }
+// 
+// .input-group-lg > .input-group-addon {
+//   font-size: 25px;
+//   color: #969b85;
+// 
+// }
+// 
+// .input-group-btn:last-child > .btn {
+//   opacity: 0.65;
+//   background: #fff;
+//   -webkit-transition: opacity 0.3s ease-in-out;
+//      -moz-transition: opacity 0.3s ease-in-out;
+//           transition: opacity 0.3s ease-in-out;
+//   border: 1px solid #e7db99;
+//   font-size: 14px;
+//   text-transform: uppercase;
+//   font-weight: 500;
+//   -webkit-font-smoothing: antialiased;
+//   font-smoothing: antialiased;
+//   color: #8D927F;
+//   &:hover {
+//     opacity: 1.0;
+//     border: 1px solid #e7db99;
+//   }
+// }
+// 
+// 
+// .authform form {
+//   background: hsla(0, 0%, 100.0000%, 0.65)
+// 
+//   }
+// body.people.index, body.events.index, body.users.index, body.events.new, body.events.show, body.registrations.edit, body.people.new {
+//   .container {
+//     background: hsla(0, 0%, 100.0000%, 0.85);
+//     padding: 20px 20px;
+//     border-radius: 20px;
+//   }
+// }
+// 
+// .modal { 
+//   background: #FFF;
+// }// 

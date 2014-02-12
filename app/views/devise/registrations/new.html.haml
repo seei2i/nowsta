@@ -1,14 +1,51 @@
-.authform
-  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }, :defaults => { :input_html => { :class => "form-control" } }) do |f|
-    = f.error_notification
-    = display_base_errors resource
-    = f.input :name, :autofocus => true
-    %br
-    = f.input :email, :required => true
-    %br
-    = f.input :password, :required => true
-    %br
-    = f.input :password_confirmation, :required => true
-    %br
-    = f.button :submit, 'Sign up', :class => 'btn-primary'
-  = render "devise/shared/links"
+%section#contacts
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3.intro
+      %h1 Sign Up 
+  .row
+    .col-xs-12.col-sm-8.col-sm-offset-2.bumpup
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => '', :id => 'contact-form' }, :defaults => { :input_html => { :class => "form-control" } }) do |f|
+        .row
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            = f.error_notification
+            = display_base_errors resource
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            = f.input :name, :autofocus => true, :placeholder => "Name"
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            = f.input :email, :required => true, :placeholder => "Email"
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            = f.input :password, :required => true, :placeholder => "Password"
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            = f.input :password_confirmation, :required => true, :placeholder => "Password Confirmation"
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            %input#submitted.button{:name => "submitted", :type => "hidden", :value => "SEND"}
+              %button#submit.btn.invitesubmit{:type => "submit"} SEND
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            = render "devise/shared/links"
+%footer
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      %hr/
+      #social-profiles
+        %ul.centerUl
+          %li
+            %a
+              %i.icon-facebook.icon-2x
+          %li
+            %a{:href => "https://twitter.com/digitalcookers", :target => "_blank"}
+              %i.icon-twitter.icon-2x
+          %li
+            %a
+              %i.icon-linkedin.icon-2x
+          %li
+            %a
+              %i.icon-instagram.icon-2x
+          %li
+            %a
+              %i.icon-flickr.icon-2x
+          %li
+            %a
+              %i.icon-google-plus.icon-2x
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      %p#copyrights ©2014 Nowsta.com | All rights reserved.

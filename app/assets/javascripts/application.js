@@ -12,6 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require bootstrap
+//= require modernizr
+//= require jquery.mixitup.min
+//= require jquery.easing
+//= require swiper
+//= require jquery.timeago
+//= require tweetable.jquery
+//= require jquery.flickr
+//= require jquery.instagram
+//= require scripts
+//= require respond.min
 //= require_tree .

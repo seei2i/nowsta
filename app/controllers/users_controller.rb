@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
+  prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
   before_filter :authenticate_user!
 
   def index
@@ -32,6 +34,12 @@ class UsersController < ApplicationController
     else
       redirect_to users_path, :notice => "Can't delete yourself."
     end
+  end
+  
+protected
+
+  def after_sign_up_path_for(resource)
+    after_sign_in_path_for(resource)
   end
 
 private

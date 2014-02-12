@@ -1,9 +1,46 @@
-.authform
-  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }, :defaults => { :input_html => { :class => "form-control" } }) do |f|
-    = f.input :email, :autofocus => true
-    %br
-    = f.input :password
-    %br
-    / = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-    = f.button :submit, "Sign in", :class => 'btn-primary'
-  = render "devise/shared/links"
+%section#contacts
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3.intro
+      %h1 Sign In 
+  .row
+    .col-xs-12.col-sm-8.col-sm-offset-2.bumpup
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => '', :id => 'contact-form' }, :defaults => { :input_html => { :class => "form-control" } }) do |f|
+        .row
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            = f.input :email, :autofocus => true
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            = f.input :password
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            %input#submitted.button{:name => "submitted", :type => "hidden", :value => "SEND"}
+              %button#submit.btn.invitesubmit{:type => "submit"} SEND
+          .col-xs-12.col-sm-8.col-sm-offset-2.formContainer
+            = render "devise/shared/links"
+%footer
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      %hr/
+      #social-profiles
+        %ul.centerUl
+          %li
+            %a
+              %i.icon-facebook.icon-2x
+          %li
+            %a{:href => "https://twitter.com/digitalcookers", :target => "_blank"}
+              %i.icon-twitter.icon-2x
+          %li
+            %a
+              %i.icon-linkedin.icon-2x
+          %li
+            %a
+              %i.icon-instagram.icon-2x
+          %li
+            %a
+              %i.icon-flickr.icon-2x
+          %li
+            %a
+              %i.icon-google-plus.icon-2x
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      %p#copyrights ©2014 Nowsta.com | All rights reserved.
+
+

@@ -1,34 +1,65 @@
--# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
-  / .container
-  .navbar-header
-    %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-      %span.sr-only Toggle navigation
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
-    = link_to(image_tag('logobeta.png'), root_path, :class => 'topper')
-    / = link_to 'NOWSTA', root_path, class: 'navbar-brand'
-  .collapse.navbar-collapse
-    %ul.nav.navbar-nav.pull-right
-      = render 'layouts/navigation_links'
-%nav.navbar.navbar-magic
-  / .container
-  %ul.nav.navbar-nav.pull-left
-    %li
-    / %a.glyphicon.glyphicon-search{:href => '#'}
-    / %span.glyphicon.glyphicon-user
-  / %form.navbar-form.navbar-left{:role => "search"}
-  /   .form-group
-  /     %input.form-control{:placeholder => "Search", :type => "text"}
-  /   %button.btn.btn-default{:type => "submit"} Submit
-  - if current_page?(people_path)
-    %ul.nav.navbar-nav.pull-right
-      %li
-        %a.glyphicon.glyphicon-user{:href => new_person_path}
-          %span +
-  - if current_page?(events_path)
-    %ul.nav.navbar-nav.pull-right
-      %li
-        %a.glyphicon.glyphicon-star{:href => new_event_path}
-          %span +
+/ -# navigation styled for Bootstrap 3.0
+/ %nav.navbar.navbar-default.navbar-fixed-top
+/   / .container
+/   .navbar-header
+/     %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+/       %span.sr-only Toggle navigation
+/       %span.icon-bar
+/       %span.icon-bar
+/       %span.icon-bar
+/     = link_to(image_tag('logobeta.png'), root_path, :class => 'topper')
+/     / = link_to 'NOWSTA', root_path, class: 'navbar-brand'
+/   .collapse.navbar-collapse
+/     %ul.nav.navbar-nav.pull-right
+/       = render 'layouts/navigation_links'
+/ %nav.navbar.navbar-magic
+/   / .container
+/   %ul.nav.navbar-nav.pull-left
+/     %li
+/     / %a.glyphicon.glyphicon-search{:href => '#'}
+/     / %span.glyphicon.glyphicon-user
+/   / %form.navbar-form.navbar-left{:role => "search"}
+/   /   .form-group
+/   /     %input.form-control{:placeholder => "Search", :type => "text"}
+/   /   %button.btn.btn-default{:type => "submit"} Submit
+/   - if current_page?(people_path)
+/     %ul.nav.navbar-nav.pull-right
+/       %li
+/         %a.glyphicon.glyphicon-user{:href => new_person_path}
+/           %span +
+/   - if current_page?(events_path)
+/     %ul.nav.navbar-nav.pull-right
+/       %li
+/         %a.glyphicon.glyphicon-star{:href => new_event_path}
+/           %span +
+
+%header#header.smooth
+  .row
+    .col-xs-12
+      #intro.text-container{:style => "position:absolute;top:150px;left:0px;width:100%;"}
+        #logo
+        %h1 Get your team on the same page.
+        %h2 
+          %a{:href => '#contacts'} Get Started
+        #explore
+          %a.scroll{:href => '#about'}
+            %h3 Learn More
+            %i.icon-angle-down.icon-4x
+#top-bar
+  .container
+    .row
+      .col-md-4
+        #logo-lettering
+          %a.scroll{:href => "#header"}
+            = image_tag('logo3.png')
+        #menu-mobile.hidden-md.hidden-lg
+          %i.icon-reorder.icon-2x
+      .col-md-8
+        %nav#top-navigation
+          %ul.list-inline
+            %li= link_to 'about',          '#about'
+            %li= link_to 'staffing',       '#works'
+            %li= link_to 'services',       '#services'
+            %li= link_to 'customers',      '#customers'
+            %li= link_to 'request invite', '#contacts'
+            %li= link_to 'sign in',         new_user_session_path 

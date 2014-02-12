@@ -19,6 +19,8 @@ gem 'simple_form'
 gem 'thin'
 gem 'devise_invitable'
 gem 'shortener'
+gem 'jquery-turbolinks'
+
 # gem 'protected_attributes'
 group :development do
   gem 'better_errors'

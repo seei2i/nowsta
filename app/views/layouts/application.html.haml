@@ -9,12 +9,13 @@
     = csrf_meta_tags
     %link{:href => "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "http://fonts.googleapis.com/css?family=Signika:400,600,700,300", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Cabin:400,700,400italic|Merriweather:900", :rel => "stylesheet", :type => "text/css"}
   %body{:class => "#{controller_name} #{action_name}", 'data-spy' => 'scroll', 'data-target' => '#navbar'}
-    %header
-      = render 'layouts/navigation'
-    %main{:role => "main"}
-      = render 'layouts/messages'
-      = yield
+    / %header
+    /   = render 'layouts/navigation'
+    / %main{:role => "main"}
+    /   = render 'layouts/messages'
+    = yield
     :javascript
       var __lc = {};
       __lc.license = 3821931;
@@ -24,3 +25,14 @@
         lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
       })();
+
+      var ready;
+      ready = function() {
+
+        textCenter();
+
+      };
+
+      $(document).ready(ready);
+      $(document).on('page:load', ready);
+      $(document).on('page:change', ready);
